@@ -1,9 +1,8 @@
 const express = require('express');
-
 const routes = express.Router();
+const BoxController = require('./controllers/BoxController');
 
-routes.get('/teste', (req, res) => { // função interceptadora 
-    return res.send("Hello world"); 
-});
+//get post put delete
+routes.post('/boxes', BoxController.store);
 
 module.exports = routes;
